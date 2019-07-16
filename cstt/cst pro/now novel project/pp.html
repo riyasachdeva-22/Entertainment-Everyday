@@ -1,0 +1,180 @@
+<!--<html>
+<head>
+<style type="text/css">
+
+</style>
+	<title></title>
+</head>
+
+<body>
+<table border="1" frames="all" rules="all" cellpadding="45px" >
+
+<tr>
+<td >logo</td>
+<td colspan="3" >top menu</td>
+</tr>
+
+<tr>
+<td rowspan="6">hey<br><br></td>
+<td rowspan="2">bye<br><br></td>
+<td rowspan="2" >now <br><br></td>
+<td rowspan="6" >today<br><br></td>
+</tr>
+
+<tr>
+
+</tr>
+
+<tr>
+	<td rowspan="2">wef<br><br></td>
+	<td rowspan="2">wtf<br><br></td>
+</tr>
+
+<tr>
+
+</tr>
+
+<tr>
+
+</tr>
+
+<tr>
+
+</tr>
+<tr>
+	<td colspan="6" align="center">footer</td>
+</tr>
+</table>
+
+</body>
+</html>
+-->
+<html>
+<head>
+	<title></title>
+
+
+
+</head>
+<body>
+	<h1>Item left</h1>
+<ol id="1">
+<li>coffee</li>
+<li>sugar</li>
+<li>tea</li>
+<li>bread</li>
+<li>eggs</li>
+<li>milk</li>
+</ol>
+<h1>Item bought</h1>
+<ol id="2"></ol>
+<input type="button" value="bought" onClick='f()' />
+
+
+
+<script type="text/javascript">
+function f(){
+var x=document.getElementById('2');
+var y=document.getElementById('1');
+var q=y.firstChild;
+x.appendChild(q);
+y.removeChild(q);
+}
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
+
+<!--
+<html>
+<head>
+	<title></title>
+</head>
+<body id="b">
+<h2 class="abc" >I am level2 heading tag</h2>
+<p>i am para 1</p>
+<h1>i am heading 1</h1>
+<p>i am para 2</p>
+<h1>i am heading 2</h1>
+<b class="abc">i am bold</b><br>
+<input type="button" value="magic" id="b1" onClick='f()'/><br>
+<input type="button" value="miracle" id="b3" onClick='g()' /><br>
+
+
+<script>
+function g(){
+var r=document.getElementsByClassName('abc');
+for(i=0;i<r.length;i++)
+{ 
+	r[i].innerHTML="NEW HEADING";
+    r[i].style.textDecoration="underline";
+
+var f=document.createElement('p');
+var d=document.createTextNode("NEW PARA");
+f.appendChild(d);
+var s=document.getElementById('b');
+
+s.insertBefore(f,r[i]);
+}
+}
+function f(){
+var x=document.getElementsByTagName('p');
+for(i=0;i<x.length;i++)
+{
+	x[i].align="right";
+	x[i].style.border="dashed 5px red"
+}
+
+}
+
+</script>
+
+</body>
+</html>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

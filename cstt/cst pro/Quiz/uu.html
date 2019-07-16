@@ -1,0 +1,550 @@
+<HTML>
+002
+<HEAD>
+003
+<BODY BGCOLOR="#ffffff" TEXT="#000000" LINK="#1e90ff" VLINK="#000080" TOPMARGIN="0" LEFTMARGIN="0" MARGINHEIGHT="0" MARGINWIDTH="0">
+004
+<script language="Javascript"><!--
+function scoreTest() {
+
+  
+
+    var thetest = document.getElementById('thetest');
+009
+  
+010
+    var numquestions = thetest.Q.length;
+011
+  
+012
+    var numcorrect = 0;
+013
+  
+014
+  
+015
+  
+016
+    for (var q=0; q<numquestions; q++) {
+017
+  
+018
+        var qname = thetest.Q[q].value;
+019
+  
+020
+        var correct = thetest["CANS."+qname].value;
+021
+  
+022
+        var checkboxgroup = thetest["ANS."+qname];
+023
+  
+024
+        for (var i=0; i<checkboxgroup.length; i++) {
+025
+  
+026
+            var response = checkboxgroup[i].value;
+027
+  
+028
+            var label = document.getElementById("LANS."+qname+"."+i);
+029
+  
+030
+            if (response == correct) {
+031
+  
+032
+                label.style.background = '#c5f4c8';
+033
+  
+034
+                if (checkboxgroup[i].checked) numcorrect++;
+035
+  
+036
+            } else if (checkboxgroup[i].checked) {
+037
+  
+038
+                label.style.background = '#f1cccd';
+039
+  
+040
+            } else {
+041
+  
+042
+                label.style.background = 'transparent';
+043
+  
+044
+            }
+045
+  
+046
+            checkboxgroup[i].disabled = true;
+047
+  
+048
+        }
+049
+  
+050
+    }
+051
+  
+052
+  
+053
+  
+054
+    var percent = Math.round(numcorrect / numquestions * 100);
+055
+  
+056
+    document.getElementById('score').innerHTML = "<b>You got " + numcorrect
+057
+  
+058
+    + " out of " + numquestions + " correct. (That's " + percent
+059
+  
+060
+    + "%.)</b>";
+061
+  
+062
+  
+063
+  
+064
+    document.getElementById('btn_submit').style.display = 'none';
+065
+  
+066
+    document.getElementById('btn_reset').style.display = 'inline';
+067
+  
+068
+    document.getElementById('results').style.display = 'inline';
+069
+  
+070
+  
+071
+  
+072
+    window.scrollTo(0,0);
+073
+  
+074
+    return false;
+075
+  
+076
+};
+077
+  
+078
+  
+079
+  
+080
+function resetTest() {
+081
+  
+082
+    var thetest = document.getElementById('thetest');
+083
+  
+084
+    var numquestions = thetest.Q.length;
+085
+  
+086
+  
+087
+  
+088
+    thetest.reset();
+089
+  
+090
+  
+091
+  
+092
+    for (var q=0; q<numquestions; q++) {
+093
+  
+094
+        var qname = thetest.Q[q].value;
+095
+  
+096
+        var checkboxgroup = thetest["ANS."+qname];
+097
+  
+098
+        for (var i=0; i<checkboxgroup.length; i++) {
+099
+  
+100
+            var label = document.getElementById("LANS."+qname+"."+i);
+101
+  
+102
+            label.style.background = 'transparent';
+103
+  
+104
+            checkboxgroup[i].checked = false;
+105
+  
+106
+            checkboxgroup[i].disabled = false;
+107
+  
+108
+        }
+109
+  
+110
+    }
+111
+  
+112
+  
+113
+  
+114
+    document.getElementById('btn_submit').style.display = 'inline';
+115
+  
+116
+    document.getElementById('btn_reset').style.display = 'none';
+117
+  
+118
+    document.getElementById('results').style.display = 'none';
+119
+  
+120
+  
+121
+  
+122
+    window.scrollTo(0,0);
+123
+  
+124
+};
+125
+  
+126
+//--></script>
+127
+<noscript>
+128
+<p align="center">
+129
+<b>This page requires Javascript</b>, which you don't seem to have.  Please try a different browser.
+130
+</p>
+131
+</noscript>
+132
+ 
+133
+<form method="post" action="mailto:jinzer@starkaerospace.com?subject=HAZ CON Quiz" enctype="text/plain" id="thetest">
+134
+Name: <input type="text" size="10" maxlength="40" name="name"> <br />
+135
+<div class="chapt_body" id="quiz">
+136
+<div id="results" style="display:none">
+137
+<p align="center" id="score"></p>
+138
+<p align="center">
+139
+Scroll through the page to review your answers.  The correct answer is highlighted in <span style="background:#c5f4c8">&nbsp;green.&nbsp;</span> Your
+140
+ incorrect answers (if any) are highlighted in <span style="background:#f1cccd">&nbsp;red.&nbsp;</span> If you'd like to take the test over again, click the reset button at the end of the test.
+141
+ </p>
+142
+</div>
+143
+  
+144
+<div><b><span class="vs_normaltext">01.   A chemical is defined as:</span></b>
+145
+  
+146
+<div id="LANS.1.0"><label><input name="ANS.1" type="checkbox" value="A">(A) A liquid in a can</label></div>
+147
+  
+148
+<div id="LANS.1.1"><label><input name="ANS.1" type="checkbox" value="B">(B)/> Any element, chemical compound or mixture of elements and/or compound</label></div>
+149
+  
+150
+<div id="LANS.1.2"><label><input name="ANS.1" type="checkbox" value="C">(C) Any can with a hazard label on it</label></div>
+151
+  
+152
+<input name="Q" type="hidden" value="1"><input name="CANS.1" type="hidden" value="B"></div><br>
+153
+ 
+154
+ 
+155
+  
+156
+<div><b><span class="vs_normaltext">02.   Exposure or exposed means:</span></b>
+157
+  
+158
+<div id="LANS.2.0"><label><input name="ANS.2" type="checkbox" value="A">(A) You are subjected to a chemical that is a physical or health hazard</label></div>
+159
+  
+160
+<div id="LANS.2.1"><label><input name="ANS.2" type="checkbox" value="B">(B)/> You spill acetone on your hands with no gloves on</label></div>
+161
+  
+162
+<div id="LANS.2.2"><label><input name="ANS.2" type="checkbox" value="C">(C) You stayed in the sun too long</label></div>
+163
+  
+164
+<input name="Q" type="hidden" value="2"><input name="CANS.2" type="hidden" value="A"></div><br>
+165
+ 
+166
+ 
+167
+  
+168
+<div><b><span class="vs_normaltext">03.   What does the term "flash point" mean:</span></b>
+169
+  
+170
+<div id="LANS.3.0"><label><input name="ANS.3" type="checkbox" value="A">(A) The maximum temperature at which a liquid gives off a vapor</label></div>
+171
+  
+172
+<div id="LANS.3.1"><label><input name="ANS.3" type="checkbox" value="B">(B)/> The minimum temperature at which a liquid gives off a vapor</label></div>
+173
+  
+174
+<div id="LANS.3.2"><label><input name="ANS.3" type="checkbox" value="C">(C) The temperature at which the chemical must be stored</label></div>
+175
+  
+176
+<input name="Q" type="hidden" value="3"><input name="CANS.3" type="hidden" value="B"></div><br>
+177
+ 
+178
+ 
+179
+  
+180
+<div><b><span class="vs_normaltext">04.   What is a MSDS:</span></b>
+181
+  
+182
+<div id="LANS.4.0"><label><input name="ANS.4" type="checkbox" value="A">(A) A piece of paper that comes with hazardous materials</label></div>
+183
+  
+184
+<div id="LANS.4.1"><label><input name="ANS.4" type="checkbox" value="B">(B)/> A data sheet that tells you the PPE necessary to avoid injury when using a hazardous chemical</label></div>
+185
+  
+186
+<div id="LANS.4.2"><label><input name="ANS.4" type="checkbox" value="C">(C) A sheet that tells you what the chemical can do to your health</label></div>
+187
+  
+188
+<input name="Q" type="hidden" value="4"><input name="CANS.4" type="hidden" value="A"></div>
+189
+<input name="Q" type="hidden" value="5"><input name="CANS.4" type="hidden" value="B"></div>
+190
+<input name="Q" type="hidden" value="6"><input name="CANS.4" type="hidden" value="C"></div><br>
+191
+ 
+192
+ 
+193
+  
+194
+<div><b><span class="vs_normaltext">05.   Where are the MSDS sheets kept:</span></b>
+195
+  
+196
+<div id="LANS.5.0"><label><input name="ANS.5" type="checkbox" value="A">(A) Warehouse</label></div>
+197
+  
+198
+<div id="LANS.5.1"><label><input name="ANS.5" type="checkbox" value="B">(B)/> Tool crib</label></div>
+199
+  
+200
+<div id="LANS.5.2"><label><input name="ANS.5" type="checkbox" value="C">(C) QA desk</label></div>
+201
+  
+202
+<div id="LANS.5.3"><label><input name="ANS.5" type="checkbox" value="D">(D) Joe's office</label></div>
+203
+  
+204
+<input name="Q" type="hidden" value="7"><input name="CANS.5" type="hidden" value="B"></div>
+205
+<input name="Q" type="hidden" value="8"><input name="CANS.5" type="hidden" value="C"></div><br>
+206
+ 
+207
+ 
+208
+  
+209
+<div><b><span class="vs_normaltext">06.   What information must be included on a container label:</span></b>
+210
+  
+211
+<div id="LANS.6.0"><label><input name="ANS.6" type="checkbox" value="A">(A) Chemical Name</label></div>
+212
+  
+213
+<div id="LANS.6.1"><label><input name="ANS.6" type="checkbox" value="B">(B)/> Hazard warning</label></div>
+214
+  
+215
+<div id="LANS.6.2"><label><input name="ANS.6" type="checkbox" value="C">(C) Manufacturer</label></div>
+216
+  
+217
+<div id="LANS.6.3"><label><input name="ANS.6" type="checkbox" value="D">(D) HMIS label</label></div>
+218
+  
+219
+<input name="Q" type="hidden" value="9"><input name="CANS.6" type="hidden" value="A"></div>
+220
+<input name="Q" type="hidden" value="10"><input name="CANS.6" type="hidden" value="B"></div>
+221
+<input name="Q" type="hidden" value="11"><input name="CANS.6" type="hidden" value="C"></div>
+222
+<input name="Q" type="hidden" value="12"><input name="CANS.6" type="hidden" value="D"></div><br>
+223
+ 
+224
+  
+225
+<div><b><span class="vs_normaltext">07.   Who is responsible for insuring MSDS sheets are in the binder"</span></b>
+226
+  
+227
+<div id="LANS.7.0"><label><input name="ANS.7" type="checkbox" value="A">(A) Tool crib assistant</label></div>
+228
+  
+229
+<div id="LANS.7.1"><label><input name="ANS.7" type="checkbox" value="B">(B)/> Employee who orders the chemicals</label></div>
+230
+  
+231
+<div id="LANS.7.2"><label><input name="ANS.7" type="checkbox" value="C">(C) Warehouse employee</label></div>
+232
+  
+233
+<input name="Q" type="hidden" value="13"><input name="CANS.7" type="hidden" value="A"></div><br>
+234
+ 
+235
+ 
+236
+  
+237
+<div><b><span class="vs_normaltext">08.   You pour from a labelled container to an unlabeled container, the new container needs to be labeled if:</span></b>
+238
+  
+239
+<div id="LANS.8.0"><label><input name="ANS.8" type="checkbox" value="A">(A) You are the only person using that container</label></div>
+240
+  
+241
+<div id="LANS.8.1"><label><input name="ANS.8" type="checkbox" value="B">(B)/> The container is left unattended in a work area</label></div>
+242
+  
+243
+<div id="LANS.8.2"><label><input name="ANS.8" type="checkbox" value="C">(C) Empties the new container immediately after using it</label></div>
+244
+  
+245
+<input name="Q" type="hidden" value="14"><input name="CANS.8" type="hidden" value="B"></div><br>
+246
+  
+247
+ 
+248
+ 
+249
+<div><b><span class="vs_normaltext">09.   What information does not need to be included on a NFPA label:</span></b>
+250
+  
+251
+<div id="LANS.9.0"><label><input name="ANS.9" type="checkbox" value="A">(A) Chemical identity</label></div>
+252
+  
+253
+<div id="LANS.9.1"><label><input name="ANS.9" type="checkbox" value="B">(B)/> PPE necessary</label></div>
+254
+  
+255
+<div id="LANS.9.2"><label><input name="ANS.9" type="checkbox" value="C">(C) Volume</label></div>
+256
+ 
+257
+<input name="Q" type="hidden" value="15"><input name="CANS.9" type="hidden" value="A"></div>
+258
+<input name="Q" type="hidden" value="16"><input name="CANS.9" type="hidden" value="B"></div><br>
+259
+  
+260
+  
+261
+<div id="btn_submit">
+262
+<p align="center">
+263
+<input class="quizsubmit" onclick="scoreTest(); return false;" src="button_submit.gif" type="image">
+264
+</p>
+265
+</div>
+266
+<div id="btn_reset" style="display:none">
+267
+<p align="center">
+268
+<input class="quizsubmit" onclick="resetTest(); return false;" src="button_reset.gif" type="image">
+269
+</p>
+270
+</div>
+271
+</form>
+272
+</div>
+273
+ 
+274
+  
+275
+</TD>    
+276
+</BODY>
+277
+</HTML>

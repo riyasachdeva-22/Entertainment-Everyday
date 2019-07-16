@@ -1,0 +1,32 @@
+<html>
+<head>
+<style>
+body {
+    margin: 0px;
+    background-color: rgb(56,220, 250);
+    overflow: hidden;
+}
+.dark {
+  color: #eeeeec;
+  background: #010105;
+  padding: 0.5%;
+}
+</style>
+</head>
+<body>
+<h1><center>About Us</center></h1>
+<br>
+<h2><marquee>ThAnkYoU for visiting our website!!</marquee></h2>
+<div class="dark">
+  
+<p align="right">
+
+        
+      <a href="1.html">Home</a>&nbsp
+      <a href="about.html">About</a>&nbsp
+      <a href="contact.html">Contact Us</a>
+  
+ </p>
+</div>
+</body>
+</html>

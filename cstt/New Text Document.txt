@@ -1,0 +1,16 @@
+<html>
+<body>
+<style>
+body {
+    margin: 0px;
+    background-color: rgb(56,220, 250);
+    overflow: hidden;
+}body {
+    margin: 0px;
+    background-color: rgb(56,220, 250);
+    overflow: hidden;
+}
+</style>
+<canvas id="canvas"></canvas>
+<p align="right"><h1><b><font style="bold" face="Matura MT Script Capitals">EntertainmenT EveryDaY</font> </h1></b>
+</html>

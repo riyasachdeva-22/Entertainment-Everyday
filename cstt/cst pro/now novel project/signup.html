@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html><head>
+
+<style type="text/css">
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+.cancelbtn {
+    
+    background-color: #f44336;
+}
+#n{ margin-left: 25%;margin-right: 25%;}
+
+body{background-image: url(nice.jpg);background-repeat: no-repeat;background-size: 100% 200%;}
+</style>
+</head>
+<div id="new">
+    <form action="action_page.php" id="n">
+  <div class="container">
+    <h1> <font color="lavender">Sign Up</font></h1>
+   <br>
+    <p > <font color="lavender">Please fill in this form to create an account.</font></p>
+    <hr>
+
+    <label for="email" ><b><font color="lavender">Email</font</b></label>
+    <input type="text" placeholder="Enter Email" id="1" name="email" required>
+
+    <label for="psw" ><b>Password</b></label>
+    <input type="password" placeholder="Enter Password"  name="psw" required>
+
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password"  name="psw-repeat" required>
+
+    <label>
+      <input type="checkbox" checked="checked" name="remember"  style="margin-bottom:15px"> Remember me
+    </label>
+
+    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+    <div class="clearfix">
+      <button type="button" class="cancelbtn" background-color="red">Cancel</button>
+      <button type="submit" class="signupbtn" onClick=f() >Sign Up</button>
+    </div>
+  </div>
+</form></div>
+<body>
+<script type="text/javascript">
+    x=document.getElementById("1").value;
+
+function f() {
+n();
+}
+function n(){
+    c=/^([A-Za-z0-9_\-\.])+\@([a-zA-Z0-9_\-\.])+\.([a-z A-Z]{2,4})$/;
+    if(!(x.match(c)))
+    {
+        alert("not entered a correct Email");
+    }
+    
+    }
+ </script>
+
+
+</body>
+</html>

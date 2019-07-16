@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html><head>
+
+<style type="text/css">
+input[type=text], input[type=password] {
+    width: 80%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+#n{ margin-left: 25%;margin-right: 25%;height: 100%;}
+
+body{background-image: url(nice.jpg);background-repeat: no-repeat;background-size: 100% 200%;}
+h1.login{color: black;border-image-height:100%; height: 100%; }
+</style>
+</head><br><br><br><br><br><br><br>
+<form action="action_page.php" style="border: 0px solid #ccc" id="n">
+  <div class="container">
+    <h1 class="login" ><B><font color="lavender">LOGIN</font></B></h1>
+    
+
+    <hr>
+
+    <label for="email"><b><font color="lavender">Email</font></b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+    <input type="text" placeholder="Enter Email" id="1" name="email" required><br>
+
+    <label for="psw"><b><font color="lavender">Password</font</b></label><br>
+    <input type="password" placeholder="Enter Password" id="1" name="psw" required>
+
+
+    <div class="clearfix">
+      
+      <button type="submit" class="loginbtn" onclick=f()>Login</button>
+    </div>
+  </div>
+<p><A HREF="signup.html" color="lavender">Haven't Sign Up...CLICK ME!!!</A></p>
+</form>
+<body>
+<script type="text/javascript">
+    x=document.getElementById("1").value;
+    y=document.getElementById("2").value;
+    
+function f() {
+n();
+g();
+
+    
+}
+function n(){
+    c=/^([A-Za-z0-9_\-\.])+\@([a-zA-Z0-9_\-\.])+\.([a-z A-Z]{2,4})$/;
+    if((!x.match(c)))
+    {
+        alert("Invalid Email");
+    }
+   
+}
+function g(){
+    d=/^[a-z A-Z 0-9]+$/;
+     if(!(y.match(d)))
+    {
+        alert("not entered a correct password");
+    }
+}
+
+
+
+    </script>
+
+</body>
+</html>

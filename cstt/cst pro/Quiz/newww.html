@@ -1,0 +1,31 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+			<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+			<script type="text/javascript">
+    		$(document).ready(function(){
+        $("input[type='button']").click(function(){
+        	var radioValue = $("input[name='f1']:checked").val();
+            if(radioValue==a){
+                alert("true");
+            }
+            else
+            {
+            	alert("false");
+            }
+        });
+        
+    });
+
+
+	</script>
+</head>
+<body>
+	<h2>tell your name</h2>
+	<form name="f" class="p">
+	<input type="radio" name="f1" value ="a">riya
+	<input type="radio" name="f2" value="b">chkshu
+	<input type="radio" name="f3" value="c">roshni
+<input type="button" name="submit" value="submit" >
+	</body>
+	</html>
